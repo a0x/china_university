@@ -8,6 +8,8 @@
 
 参考项目： [ChinaCity](https://github.com/saberma/china_city)
 
+> 目前该项目处于开发中，于`dev`分支提交代码。
+
 ## 协议
 
 [MIT License](LICENSE)
