@@ -1,0 +1,15 @@
+language: ruby
+bundler_args: 'j6'
+
+script: bundle exec rake spec
+
+before_install:
+  - grep -i processor /proc/cpuinfo | wc -l
+  - "echo 'gem: --no-ri --no-rdoc' > ~/.gemrc"
+  - gem install bundler --pre
+  - bundler -v
+
+rvm: 2.0.0
+
+gemfile:
+  - spec/dummy/Gemfile
