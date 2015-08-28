@@ -1,0 +1,10 @@
+if ENV['TRAVIS']
+  source 'https://rubygems.org'
+else
+  source 'http://ruby.taobao.org'
+end
+
+gem 'rails', '~> 4.0.0'
+gem 'jquery-rails'
+
+gemspec :path => '../../'
