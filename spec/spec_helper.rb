@@ -16,7 +16,18 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+ENV["RAILS_ENV"] = 'test'
+require File.expend_path('../dummy/config/environment.rb', __FILE__)
+require 'rspec/rails'
+require 'capybara/poltergeist'
+
+Capybara.javascript_driver = :poltergeist
+puts "Rails #{Rails.version}"
+
 RSpec.configure do |config|
+  config.treat_symbols_as_metadata_keys_with_true_value = true
+  config.run_all_when_everything_filtered
+  config.filter_run :focus
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
